@@ -1,0 +1,165 @@
+@font-face {
+  font-family: gandom;
+  src: url(../fonts/Gandom.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gandom;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #212121;
+}
+
+.menu-checkbox-toggle {
+  display: none;
+}
+
+.mobile-menu-toggle-container {
+  position: relative;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  margin-top: 2vh;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+.header-navbar {
+  width: 100%;
+  height: 10vh;
+  background-color: #0d6efd;
+}
+
+.header-navbar .header-navbar-container {
+  width: 75%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.header-navbar .header-navbar-container-item, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li {
+  background-color: lavender;
+  padding: 1.5vh 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: .7vw;
+  transition: all .7s;
+  cursor: pointer;
+  color: #0d6efd;
+  box-shadow: #0d6efd 0px 50px 100px -20px, rgba(66, 75, 77, 0.8) 0px 30px 60px -30px, rgba(5, 88, 99, 0.85) 0px -2px 6px 0px inset;
+}
+
+.header-navbar .header-navbar-container-item:hover, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li:hover {
+  background-color: #142e56;
+  color: aliceblue;
+}
+
+.header-navbar .header-navbar-container-item a, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li a {
+  color: #0d6efd;
+  transition: all .7s;
+}
+
+.header-navbar .header-navbar-container-item:hover > a, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li:hover > a {
+  color: aliceblue;
+}
+
+.header-navbar .header-navbar-container-item:active, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li:active {
+  transform: translateY(1vh);
+}
+
+.header-navbar .navbar-product-container-item {
+  cursor: pointer;
+  position: relative;
+}
+
+.header-navbar .navbar-product-container-item .navbar-product-list-container-item {
+  position: absolute;
+  top: 5.5vh;
+  right: -10vw;
+  list-style: none;
+  width: 170%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .7s;
+  margin-top: 1vh;
+  color: #444 !important;
+}
+
+.header-navbar .navbar-product-container-item .navbar-product-list-container-item li {
+  transition: all .7s;
+  width: 100%;
+}
+
+.header-navbar .navbar-product-container-item:hover .navbar-product-list-container-item {
+  width: 170%;
+  top: 5.5vh;
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.header-navbar .navbar-product-container-item:hover .navbar-product-list-container-item li {
+  width: auto;
+}
+
+main .box {
+  width: 20vw;
+  height: 40vh;
+  background-color: transparent;
+  margin: 10vw;
+  border-radius: 1.5vw;
+  box-shadow: #0d6efd 0px 50px 100px -20px, rgba(66, 75, 77, 0.8) 0px 30px 60px -30px, rgba(5, 88, 99, 0.85) 0px -2px 6px 0px inset;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-toggle-container {
+    display: flex;
+  }
+  .header-navbar {
+    height: fit-content;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    position: fixed;
+    top: -35%;
+    transition: all 1.2s;
+    z-index: 1;
+  }
+  .menu-checkbox-toggle:checked ~ .header-navbar {
+    top: 0 !important;
+    padding-bottom: 0;
+    height: fit-content;
+  }
+  .header-navbar-container {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .header-navbar-container-item, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li {
+    width: 100%;
+    text-align: center;
+  }
+  .header-navbar-container-item .navbar-product-list-container-item, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li .navbar-product-list-container-item {
+    width: 100% !important;
+    text-align: center;
+    right: -200vw !important;
+    transition: all .7s !important;
+  }
+  .header-navbar-container-item:hover .navbar-product-list-container-item, .header-navbar .navbar-product-container-item .navbar-product-list-container-item li:hover .navbar-product-list-container-item {
+    right: 0 !important;
+  }
+}
