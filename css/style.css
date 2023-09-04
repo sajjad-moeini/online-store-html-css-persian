@@ -495,6 +495,7 @@ body {
   }
   .off-boxes .box {
     width: 45% !important;
+    border-radius: 2rem;
   }
   .off-boxes .box .off-show {
     position: absolute;
